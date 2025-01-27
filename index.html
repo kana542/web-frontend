@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI-laskuri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="bmi.jpg" alt="BMI-kaavio" class="chart-bmi">
+        <div class="title">
+            <h1>BMI-laskuri</h1>
+        </div>
+        <div class="bmi-explained">
+            <p class="bmi-text">
+                Painoindeksilaskurilla voit laskea pituuden ja painon perusteella painoindeksin (BMI, Body Mass Index).
+            </p>
+        </div>
+        <div class="input-box">
+            <form class="bmi-form" method="post" action="#">
+                <label for="bmi-weight">Paino (kg):</label>
+                <input type="number" id="bmi-weight" step="0.1" placeholder="kg">
+                <label for="bmi-height">Pituus (m):</label>
+                <input type="number" id="bmi-height" step="0.01" placeholder="m">
+            </form>
+        </div>
+        <div class="calculate-button">
+            <button>Laske BMI</button>
+        </div>
+        <div class="results">
+            <p id="personal-result">Mittaustuloksesi:</p>
+            <table class="bmi-table">
+                <tr>
+                    <th>Alipaino</th>
+                    <th>Normaali paino</th>
+                    <th>Ylipaino</th>
+                </tr>
+                <tr>
+                    <td>&lt;18.5</td>
+                    <td>18.5–24.9</td>
+                    <td>&gt;25</td>
+                </tr>
+            </table>
+            <div class="analysis">
+                <p id="result-analysis">Analyysi: Tähän saat tietoa painoindeksistäsi.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
