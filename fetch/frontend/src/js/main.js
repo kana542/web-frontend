@@ -1,6 +1,6 @@
-import { fetchUsers } from "./fetch.js";
+import { fetchUsers, createNewUser, deleteUser } from "./fetch.js";
 
-const userTableBody = document.getElementById("user-table-body");
+const userTableBody = document.getElementById("users-table-body");
 const fetchButton = document.getElementById("fetch-users");
 
 const createUserRow = (user) => {
@@ -34,7 +34,10 @@ const createUserRow = (user) => {
 
 const updateTable = async () => {
    const users = await fetchUsers();
+   console.log(users);
    userTableBody.replaceChildren(...users.map((user) => createUserRow(user)));
 };
+
+
 
 fetchButton.addEventListener("click", updateTable);
