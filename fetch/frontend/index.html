@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th class="username-col">Username</th>
+                    <th class="email-col">Email</th>
+                    <th class="info-col">Info</th>
+                    <th class="delete-col">Delete</th>
+                    <th class="id-col">ID</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body">
+            </tbody>
+        </table>
+        <button id="fetch-users" class="fetch-button">Get All Users</button>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>

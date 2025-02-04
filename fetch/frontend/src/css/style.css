@@ -1,0 +1,43 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.user-table {
+   border-collapse: separate;
+   border-spacing: 0;
+   background: white;
+   table-layout: fixed;
+}
+
+.user-table thead {
+   background: #009879;
+   color: white;
+}
+
+.user-table th {
+   padding: 15px;
+   text-align: left;
+   font-weight: 500;
+}
+
+.user-table th.username-col {
+   width: 15%;
+}
+
+.user-table th.email-col {
+   width: 25%;
+}
+
+.user-table th.info-col {
+   width: 10%;
+}
+
+.user-table th.delete-col {
+   width: 10%;
+}
+
+.user-table th.id-col {
+   width: 10%;
+}
