@@ -9,20 +9,33 @@
   </head>
   <body>
     <div class="container">
-        <table class="user-table">
-            <thead>
-                <tr>
-                    <th class="username-col">Username</th>
-                    <th class="email-col">Email</th>
-                    <th class="info-col">Info</th>
-                    <th class="delete-col">Delete</th>
-                    <th class="id-col">ID</th>
-                </tr>
-            </thead>
-            <tbody id="user-table-body">
-            </tbody>
-        </table>
-        <button id="fetch-users" class="fetch-button">Get All Users</button>
+        <div class="users-container">
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th class="username-col">USERNAME</th>
+                        <th class="email-col">EMAIL</th>
+                        <th class="info-col">INFO</th>
+                        <th class="delete-col">DELETE</th>
+                        <th class="id-col">ID</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body">
+                </tbody>
+            </table>
+            <button id="fetch-users" class="fetch-button">Get All Users</button>
+        </div>
+        <div class="new-user-container">
+            <form id="new-user-form" class="new-user-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+            </form>
+                <button type="submit" class="fetch-button">Create User</button>
+        </div>
     </div>
     <script type="module" src="/src/js/main.js"></script>
   </body>
