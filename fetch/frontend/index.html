@@ -23,18 +23,35 @@
                 <tbody id="users-table-body">
                 </tbody>
             </table>
+            <dialog class="info_dialog">
+               <div class="dialog-content">
+                 <h2>Käyttäjän tiedot</h2>
+                 <div class="user-info">
+                   <div>UserID: <span id="dialog-user-id"></span></div>
+                   <div>UserName: <span id="dialog-user-name"></span></div>
+                   <div>Email: <span id="dialog-user-email"></span></div>
+                   <div>Role: <span id="dialog-user-role"></span></div>
+                 </div>
+                 <button class="close-button" autofocus>Sulje</button>
+               </div>
+            </dialog>
             <button id="fetch-users" class="fetch-button">Get All Users</button>
         </div>
         <div class="new-user-container">
             <form id="new-user-form" class="new-user-form">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required />
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required />
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required />
+               <label for="username">Username</label>
+               <input type="text" id="username" name="username" required />
+               <label for="email">Email</label>
+               <input type="email" id="email" name="email" required />
+               <label for="password">Password</label>
+               <input type="password" id="password" name="password" required />
+               <label for="user_level">User Level</label>
+               <select id="user_level" name="user_level" required>
+                  <option value="regular">Regular</option>
+                  <option value="admin">Admin</option>
+               </select>
             </form>
-                <button id="create-user" class="fetch-button">Create User</button>
+            <button id="create-user" class="fetch-button">Create User</button>
         </div>
     </div>
     <script type="module" src="/src/js/main.js"></script>

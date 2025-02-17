@@ -4,18 +4,21 @@ const users = [
       username: "johndoe",
       password: "password1",
       email: "johndoe@example.com",
+      user_level: "regular",
    },
    {
       id: 2,
       username: "janedoe",
       password: "password2",
       email: "janedoe@example.com",
+      user_level: "regular",
    },
    {
       id: 3,
       username: "bobsmith",
       password: "password3",
       email: "bobsmith@example.com",
+      user_level: "admin",
    },
 ];
 
@@ -28,8 +31,8 @@ const getUserById = (req, res) => {
    const user = users.find((user) => user.id == req.params.id);
    console.log("User found:", user);
    if (user) {
-      const { id, username, email } = user;
-      res.json({ id, username, email });
+      const { id, username, email, user_level } = user;
+      res.json({ id, username, email, user_level });
    } else {
       res.status(404).json({ message: "User not found" });
    }
@@ -37,7 +40,7 @@ const getUserById = (req, res) => {
 
 const addUser = (req, res) => {
    console.log("addUser request body", req.body);
-   const { username, password, email } = req.body;
+   const { username, password, email, user_level } = req.body;
    if (username && password && email) {
       const latestId = users[users.length - 1].id;
       const newUser = {
@@ -45,6 +48,7 @@ const addUser = (req, res) => {
          username,
          password,
          email,
+         user_level,
       };
       users.push(newUser);
       res.status(201);
@@ -52,7 +56,8 @@ const addUser = (req, res) => {
    }
    res.status(400);
    return res.json({
-      message: "Request should have username, password and email properties.",
+      message:
+         "Request should have username, password, email and user level properties.",
    });
 };
 
@@ -63,6 +68,7 @@ const editUser = (req, res) => {
       user.username = req.body.username;
       user.password = req.body.password;
       user.email = req.body.email;
+      user.user_level = req.body.user_level;
       res.json({ message: "User updated." });
    } else {
       res.status(404).json({ message: "User not found" });

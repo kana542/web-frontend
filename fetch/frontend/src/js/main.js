@@ -3,6 +3,8 @@ import { fetchUsers, createNewUser, deleteUser, getUserById } from "./fetch.js";
 const userTableBody = document.getElementById("users-table-body");
 const fetchButton = document.getElementById("fetch-users");
 const newUserButton = document.getElementById("create-user");
+const dialog = document.querySelector(".info_dialog");
+const closeButton = document.querySelector(".close-button");
 
 const createUserRow = (user) => {
    const tr = document.createElement("tr");
@@ -47,7 +49,8 @@ const createUser = async () => {
    const username = document.getElementById("username").value;
    const email = document.getElementById("email").value;
    const password = document.getElementById("password").value;
-   await createNewUser(username, email, password);
+   const user_level = document.getElementById("user_level").value;
+   await createNewUser(username, email, password, user_level);
    updateTable();
 };
 
@@ -68,8 +71,19 @@ userTableBody.addEventListener("click", async (event) => {
       const cells = row.getElementsByTagName("td");
       const id = cells[4].textContent;
       const user = await getUserById(id);
-      alert(`Username: ${user.username}\nEmail: ${user.email}\nID: ${user.id}`);
+      console.log(user);
+
+      document.getElementById("dialog-user-id").textContent = user.id;
+      document.getElementById("dialog-user-name").textContent = user.username;
+      document.getElementById("dialog-user-email").textContent = user.email;
+      document.getElementById("dialog-user-role").textContent = user.user_level;
+
+      dialog.showModal();
    }
 });
 
 newUserButton.addEventListener("click", createUser);
+
+closeButton.addEventListener("click", () => {
+   dialog.close();
+});
